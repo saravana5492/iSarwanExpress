@@ -5,7 +5,7 @@ var models = require("../db/models/index");
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-  models.Test.find({
+  models.Test.findAll({
 
      }).then(function (data) {
 
@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
      }
   )
-  
+
 });
 
 module.exports = router;

@@ -8,6 +8,8 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
+console.log("Runnng Now in" + env);
+
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
@@ -34,3 +36,6 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
+
+//sequelize db:migrate --url 'mysql://iSaravana:saravana5492@isarwan.chzqd2h4xyba.ap-south-1.rds.amazonaws.com/iSarwanExpress'
